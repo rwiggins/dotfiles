@@ -62,3 +62,21 @@ alias lh='ls -alt | head' # see the last modified files
 alias screen='TERM=screen screen'
 alias cl='clear'
 alias rsync='noglob rsync -vahzP'
+
+# Global aliases
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g C='| wc -l'
+alias -g H='| head'
+alias -g L="| less"
+alias -g S=">& /dev/null &!" # silent, automatic disown
+alias -g G='| grep' # now you can do: ls foo G something
+
+# Functions
+#
+# (f)ind by (n)ame
+# usage: fn foo 
+# to find all files containing 'foo' in the name
+function fn() { ls **/*$1* }
+
